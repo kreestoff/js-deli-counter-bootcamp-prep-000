@@ -2,17 +2,6 @@ function takeANumber(line, name) {
   line.push(name)
   return `Welcome, ${name}. You are number ${line.length} in line.`
 }
-var num = 0
-function takeANumber(line) {
-   num++
-   line.push(num)
-   return num
-}
-takeANumber(line) -> 1 
-takeANumber(line) -> 2 
-nowServing(line) -> 1 
-nowServing(line) -> Currently serving 2 
-takeANumbner(line) -> 3
 function nowServing(line) {
   if (!line.length) {
     return "There is nobody waiting to be served!"
