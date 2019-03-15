@@ -1,22 +1,31 @@
-function takeANumber(number, name) {
-  number.push(name);
-  return `Welcome, ${name}. You are number ${number.length} in line.`
+function takeANumber(line, name) {
+  line.push(name)
+  return `Welcome, ${name}. You are number ${line.length} in line.`
 }
-function nowServing(number) {
-  if (number.length === 0) {
+var num = 0
+function takeANumber(line) {
+   num++
+   line.push(num)
+   return num
+}
+takeANumber(line) -> 1 
+takeANumber(line) -> 2 
+nowServing(line) -> 1 
+nowServing(line) -> Currently serving 2 
+takeANumbner(line) -> 3
+function nowServing(line) {
+  if (!line.length) {
     return "There is nobody waiting to be served!"
- }
- return `Currently serving ${number.shift()}.`
+  }
+  return `Currently serving ${line.shift()}.`
 }
-function currentLine(number) {
-  if (number.length === 0) {
+function currentLine(line) {
+  if (!line.length) {
     return "The line is currently empty."
   }
-  const numbersAndNames = []
-
-  for (let i = 0, l = number.length; i < l; i++) {
-    numbersAndNames.push(`${i + 1}. ${number[i]}`)
- }
-
+  var numbersAndNames = []
+  for (let i = 0, l = line.length; i < l; i++) {
+    numbersAndNames.push(`${i + 1}. ${line[i]}`)
+  }
   return `The line is currently: ${numbersAndNames.join(', ')}`
 }
